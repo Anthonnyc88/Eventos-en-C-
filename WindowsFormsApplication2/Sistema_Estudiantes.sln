@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication2", "WindowsFormsApplication2\WindowsFormsApplication2.csproj", "{FD3CCDCF-8157-488C-AEEF-C5175CEFE336}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "capa_Presentacion", "WindowsFormsApplication2\capa_Presentacion.csproj", "{FD3CCDCF-8157-488C-AEEF-C5175CEFE336}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "capa_Datos", "capa_Datos\capa_Datos.csproj", "{741A3C3D-1027-45DA-BB7F-072DC43D5B3E}"
 EndProject

@@ -5,15 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
 
+
+
+
 namespace capa_Datos
 {
-    public class Class1
+    public class Datos
     {
         static string cadenaConexion = null;
         static NpgsqlConnection conexion;
         static NpgsqlCommand cmd;
 
-        public static void Conexion()
+        public   static void Conexion()
         {
             string servidor = "localhost";
             int puerto = 5432;
@@ -40,5 +43,20 @@ namespace capa_Datos
 
 
 
+
     }
+
 }
+
+
+
+
+
+
+        
+
+        
+
+
+
+    

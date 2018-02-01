@@ -43,13 +43,15 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label8 = new System.Windows.Forms.Label();
             this.textBox2d = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.comboBoxEstudiantes = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.texResidencia = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -67,7 +69,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.YellowGreen;
+            this.tabPage1.BackColor = System.Drawing.Color.DarkBlue;
             this.tabPage1.Controls.Add(this.bntSalir);
             this.tabPage1.Controls.Add(this.bntInsertar);
             this.tabPage1.Controls.Add(this.dateTimePicker1);
@@ -83,10 +85,12 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(540, 347);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Registro Estudiantes";
+            this.tabPage1.ToolTipText = "Registro Estudiantes";
             // 
             // bntSalir
             // 
+            this.bntSalir.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bntSalir.Location = new System.Drawing.Point(456, 312);
             this.bntSalir.Name = "bntSalir";
             this.bntSalir.Size = new System.Drawing.Size(75, 25);
@@ -97,9 +101,10 @@
             // 
             // bntInsertar
             // 
-            this.bntInsertar.Location = new System.Drawing.Point(239, 231);
+            this.bntInsertar.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntInsertar.Location = new System.Drawing.Point(304, 234);
             this.bntInsertar.Name = "bntInsertar";
-            this.bntInsertar.Size = new System.Drawing.Size(75, 23);
+            this.bntInsertar.Size = new System.Drawing.Size(90, 35);
             this.bntInsertar.TabIndex = 9;
             this.bntInsertar.Text = "Insertar";
             this.bntInsertar.UseVisualStyleBackColor = true;
@@ -109,35 +114,40 @@
             // 
             this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(227, 131);
+            this.dateTimePicker1.Location = new System.Drawing.Point(295, 139);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(112, 20);
             this.dateTimePicker1.TabIndex = 8;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(158, 137);
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(121, 136);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 13);
+            this.label4.Size = new System.Drawing.Size(107, 25);
             this.label4.TabIndex = 7;
             this.label4.Text = "Fecha Nac:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(158, 96);
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(121, 87);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.Size = new System.Drawing.Size(84, 25);
             this.label2.TabIndex = 6;
             this.label2.Text = "Nombre:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(158, 182);
+            this.label3.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(121, 180);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 13);
+            this.label3.Size = new System.Drawing.Size(112, 25);
             this.label3.TabIndex = 5;
             this.label3.Text = "Residencia:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -145,52 +155,57 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(158, 49);
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(121, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.Size = new System.Drawing.Size(77, 25);
             this.label1.TabIndex = 3;
             this.label1.Text = "Cedula:";
             // 
             // txtResidencia
             // 
-            this.txtResidencia.Location = new System.Drawing.Point(227, 175);
+            this.txtResidencia.Location = new System.Drawing.Point(295, 186);
             this.txtResidencia.Name = "txtResidencia";
-            this.txtResidencia.Size = new System.Drawing.Size(100, 20);
+            this.txtResidencia.Size = new System.Drawing.Size(112, 20);
             this.txtResidencia.TabIndex = 2;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(227, 93);
+            this.txtNombre.Location = new System.Drawing.Point(295, 93);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.Size = new System.Drawing.Size(112, 20);
             this.txtNombre.TabIndex = 1;
             // 
             // txtCedula
             // 
-            this.txtCedula.Location = new System.Drawing.Point(227, 49);
+            this.txtCedula.Location = new System.Drawing.Point(295, 55);
             this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(100, 20);
+            this.txtCedula.Size = new System.Drawing.Size(112, 20);
             this.txtCedula.TabIndex = 0;
+            this.txtCedula.TextChanged += new System.EventHandler(this.txtCedula_TextChanged);
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.YellowGreen;
-            this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.dateTimePicker2);
+            this.tabPage2.BackColor = System.Drawing.Color.Navy;
+            this.tabPage2.Controls.Add(this.texResidencia);
+            this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.textBox2d);
-            this.tabPage2.Controls.Add(this.textBox1);
             this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.comboBoxEstudiantes);
             this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.dateTimePicker2);
+            this.tabPage2.Controls.Add(this.textBox2d);
+            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.comboBoxEstudiantes);
+            this.tabPage2.ForeColor = System.Drawing.Color.Black;
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(540, 347);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Buscar Estudiantes";
+            this.tabPage2.ToolTipText = "Buscar Estudiantes";
             // 
             // button1
             // 
@@ -205,73 +220,92 @@
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(159, 169);
+            this.dateTimePicker2.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker2.Location = new System.Drawing.Point(296, 177);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker2.Size = new System.Drawing.Size(121, 20);
             this.dateTimePicker2.TabIndex = 7;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.Maroon;
-            this.label8.Location = new System.Drawing.Point(54, 175);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(93, 13);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Fecha Nacimiento";
             // 
             // textBox2d
             // 
-            this.textBox2d.Location = new System.Drawing.Point(165, 126);
+            this.textBox2d.Location = new System.Drawing.Point(296, 132);
             this.textBox2d.Name = "textBox2d";
-            this.textBox2d.Size = new System.Drawing.Size(100, 20);
+            this.textBox2d.Size = new System.Drawing.Size(121, 20);
             this.textBox2d.TabIndex = 5;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(165, 90);
+            this.textBox1.Location = new System.Drawing.Point(296, 90);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(121, 20);
             this.textBox1.TabIndex = 4;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.Maroon;
-            this.label7.Location = new System.Drawing.Point(60, 126);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 13);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Nombre";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.Maroon;
-            this.label6.Location = new System.Drawing.Point(60, 93);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Cedula";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // comboBoxEstudiantes
             // 
             this.comboBoxEstudiantes.FormattingEnabled = true;
-            this.comboBoxEstudiantes.Location = new System.Drawing.Point(165, 46);
+            this.comboBoxEstudiantes.Location = new System.Drawing.Point(296, 51);
             this.comboBoxEstudiantes.Name = "comboBoxEstudiantes";
             this.comboBoxEstudiantes.Size = new System.Drawing.Size(121, 21);
             this.comboBoxEstudiantes.TabIndex = 1;
+            this.comboBoxEstudiantes.SelectedIndexChanged += new System.EventHandler(this.comboBoxEstudiantes_SelectedIndexChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.Maroon;
-            this.label5.Location = new System.Drawing.Point(60, 49);
+            this.label5.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(52, 84);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Lista Estudiantes";
+            this.label5.Size = new System.Drawing.Size(77, 25);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Cedula:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(52, 126);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(84, 25);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Nombre:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(52, 172);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(107, 25);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Fecha Nac:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(52, 47);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(166, 25);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "Lista Estudiantes:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(52, 223);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(112, 25);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "Residencia:";
+            // 
+            // texResidencia
+            // 
+            this.texResidencia.Location = new System.Drawing.Point(296, 227);
+            this.texResidencia.Name = "texResidencia";
+            this.texResidencia.Size = new System.Drawing.Size(121, 20);
+            this.texResidencia.TabIndex = 14;
             // 
             // Form1
             // 
@@ -305,15 +339,17 @@
         private System.Windows.Forms.Button bntInsertar;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBoxEstudiantes;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox2d;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox texResidencia;
+        private System.Windows.Forms.Label label9;
     }
 }
 
